@@ -11,10 +11,10 @@ export const taskSlice = createSlice({
       state.push(action.payload)
     },
     deleteTask: (state, action) => {
-      return state.filter(e => e.id !== action.payload.id)
+      return state.filter(e => e._id !== action.payload._id)
     },
     toggleComplete: (state, action) => {
-      const index = state.findIndex(e => e.id === action.payload.id)
+      const index = state.findIndex(e => e._id === action.payload._id)
       state[index].completed = !state[index].completed
       if (state[index].completed) {
         state[index].completedTimeStamp = new Date()
