@@ -5,3 +5,58 @@
 .btn-animation {
     @apply duration-200  hover:scale-110 active:scale-100 px-2 py-3 rounded-xl
 }
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-spin {
+    animation: spin 2s linear infinite;
+}
+
+.bounce-in-right {
+    animation: bounce-in-right 1.5s ease;
+  }
+  @keyframes bounce-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-30px);
+    }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+.bounce-in-left {
+    animation: bounce-in-left 1.5s ease;
+  }
+  @keyframes bounce-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(30px);
+    }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+.bounce-in-down {
+    animation: bounce-in-down 1.5s ease;
+  }
+  @keyframes bounce-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    80% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+  }

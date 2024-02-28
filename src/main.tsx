@@ -4,6 +4,8 @@ import { Provider } from "react-redux"
 import App from "./App"
 import { store } from "./app/store"
 import "./index.css"
+import { ApiProvider } from "@reduxjs/toolkit/query/react"
+import { authApi } from "./api/authAPI"
 
 const container = document.getElementById("root")
 
@@ -13,7 +15,7 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+          <App />
       </Provider>
     </React.StrictMode>,
   )

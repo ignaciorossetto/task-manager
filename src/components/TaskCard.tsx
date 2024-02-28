@@ -8,18 +8,18 @@ const TaskCard = (props: Task) => {
   const dispatch = useAppDispatch()
   const handleDeleteTask = () => {
     dispatch(deleteTask({
-      id:props.id
+      id:props._id
     }))
   }
   const handleToggleComplete = () => {
     dispatch(toggleComplete({
-      id:props.id
+      id:props._id
     }))
   }
 
   return (
     <div
-    className="p-5 flex flex-col justify-between border-2 rounded-xl shadow-2xl min-h-[175px] w-[250px]"
+    className="p-5 flex flex-col justify-between border-2 rounded-xl shadow-2xl min-h-[175px] w-[250px] bg-white/95"
     >
     <div className="flex flex-col gap-2">
       <h3
@@ -33,13 +33,13 @@ const TaskCard = (props: Task) => {
       >
         <p
         className="text-[14px] italic text-black/45 text-pretty break-words"
-        >Creada: {props.timeStamp.toLocaleString()}</p>
+        >Creada: {props.createdAt.toLocaleString()}</p>
         {
           props.completed && props.completedTimeStamp &&
           <p
           className="text-[14px] italic text-black/45 text-pretty break-words"
           >
-            Completed: {props.completedTimeStamp.toLocaleString()}
+            Completed: {props?.completedTimeStamp?.toLocaleString()}
           </p>
         }
       </div>
